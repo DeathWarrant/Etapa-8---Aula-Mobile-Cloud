@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\API Client\APIClient.cs" />
+     <Compile Include="Assets\Scripts\API Client\JSonHelper.cs" />
      <Compile Include="Assets\Scripts\API Client\Models\Item.cs" />
      <Compile Include="Assets\Scripts\API Client\Models\TipoItem.cs" />
  <Reference Include="UnityEngine.UI">
