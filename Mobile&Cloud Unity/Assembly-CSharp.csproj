@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\API Client\JSonHelper.cs" />
      <Compile Include="Assets\Scripts\API Client\Models\Item.cs" />
      <Compile Include="Assets\Scripts\API Client\Models\TipoItem.cs" />
+     <Compile Include="Assets\Scripts\GameControllerBehaviour.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
