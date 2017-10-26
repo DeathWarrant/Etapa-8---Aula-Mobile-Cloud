@@ -4,6 +4,7 @@ using UnityEngine.Networking;
 
 public class APIClient : MonoBehaviour
 {
+    [HideInInspector] public Item[] itens = null;
     private const string baseUrl = "http://localhost:54853/API";
 
 	void Start ()
@@ -26,7 +27,7 @@ public class APIClient : MonoBehaviour
             string response = request.downloadHandler.text;
             Debug.Log(response);
 
-            Item[] itens = JSonHelper.getJsonArray<Item>(response);
+            itens = JSonHelper.getJsonArray<Item>(response);
 
             foreach (Item i in itens)
             {

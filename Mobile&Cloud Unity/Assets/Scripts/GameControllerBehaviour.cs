@@ -11,6 +11,7 @@ public class GameControllerBehaviour : MonoBehaviour
 
     private bool isInventarioOnCooldown = false;
     private float inventarioCooldown = 0.0f;
+    private APIClient apiClient = null;
 
 	void Start ()
     {
@@ -27,6 +28,7 @@ public class GameControllerBehaviour : MonoBehaviour
     {
         inventario.SetActive(false);
         isInventarioOnCooldown = false;
+        apiClient = GetComponent<APIClient>();
     }
 
     private void GetInputs()
