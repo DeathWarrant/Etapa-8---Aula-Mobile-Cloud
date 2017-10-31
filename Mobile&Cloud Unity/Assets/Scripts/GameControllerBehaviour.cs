@@ -51,12 +51,11 @@ public class GameControllerBehaviour : MonoBehaviour
         {
             inventarioCooldown += Time.deltaTime;
 
-            if(inventarioCooldown >= 0.5f)
+            if(inventarioCooldown >= 0.25f)
             {
+                inventarioCooldown = 0.0f;
                 isInventarioOnCooldown = false;
             }
         }
-
-
     }
 }

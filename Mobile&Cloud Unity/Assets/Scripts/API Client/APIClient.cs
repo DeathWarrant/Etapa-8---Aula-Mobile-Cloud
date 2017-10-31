@@ -10,6 +10,7 @@ public class APIClient : MonoBehaviour
 	void Start ()
     {
         StartCoroutine("GetItensAPISync");
+        StartCoroutine("PostItemApiSync");
 	}
 
     IEnumerator GetItensAPISync()
@@ -32,6 +33,32 @@ public class APIClient : MonoBehaviour
             foreach (Item i in itens)
             {
                 ImprimirItem(i);
+            }
+        }
+    }
+
+    IEnumerator PostItemApiSync()
+    {
+        WWWForm form = new WWWForm();
+
+        form.AddField("Nome", "ItemFromUnity");
+        form.AddField("Descrição", "Item enviado por POST para Unity3D");
+        form.AddField("DanoMaximo", "5");
+        form.AddField("Raridade", "90");
+        form.AddField("TipoItemID", "2");
+
+        using (UnityWebRequest request = UnityWebRequest.Post(baseUrl + "/Itens/Create", form))
+        {
+            yield return request.Send();
+            //yield return request.SendWebRequest(); Unity 2017.2  52.219
+
+            if (request.isNetworkError || request.isHttpError)
+            {
+                Debug.Log(request.error);
+            }
+            else
+            {
+                Debug.Log("Envio do item efetudado com sucesso");
             }
         }
     }
